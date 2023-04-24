@@ -1,0 +1,37 @@
+<main>
+    <div class="container contenedor-padre-publicaciones">
+        <div class="contenedor-esc-publicaciones d-flex justify-content-center">
+            <div class="userImg-publicacion">
+                <span><i class="bi bi-person-circle icon-user-publicacion"></i></span>
+            </div>
+            <form action="/publicaciones" method="POST">
+                <textarea name="publicacion" class="inp-publicacion" placeholder="Mensaje..."></textarea>
+                <button class="btn-subir mt-1"><i class="bi bi-send me-2"></i>Enviar</button>
+            </form>
+        </div>
+
+        <div class="border-bottom border-dark-subtle my-4"></div>
+
+        {{#if publicaciones}}
+        <div class="contenedor-publicacion">
+            {{#each publicaciones}}
+            <div class="publicacion-comentario my-3">
+                <div class="d-flex publicacion">
+                    <div class="img-mensaje"><span><i class="bi bi-person-circle icon-user-publicacion"></i></span>
+                    </div>
+                    <div>
+                        <p class="nombre-usuario-publicacion">{{name}}</p>
+                        <p class="text-publicacion">{{publication}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="mt-5">
+            <h2 class="text-center">No hay publicaciones</h2>
+        </div>
+
+        {{/if}}
+    </div>
+</main>

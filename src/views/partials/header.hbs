@@ -1,0 +1,53 @@
+<header>
+
+    <div class="container">
+        {{#if name}}
+        <nav class="navbar navbar-expand-lg bg-body-tertiary responsive-menu">
+            <div class="container-fluid">
+                <a href="/" class="text-decoration-none"><h1 class="navbar-brand text-light">Mi app</h1></a>
+                <button class="border-0 navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse texto-blanco pt-3" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link border-top" aria-current="page" href="#">Home</a>
+                        <a class="nav-link border-top" href="#">Features</a>
+                        <a class="nav-link border-top" href="#">Pricing</a>
+                        <a class="nav-link border-top border-bottom link-user-responsive"><i class="bi bi-person-circle text-light icon-user"></i>{{name}}</a>
+                        <a class="nav-link link-logout-responsive" href="/logout"><i class="bi bi-box-arrow-right"></i>Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar bg-body-tertiary color-fondo container-btnDown">
+            <a href="/" class="text-decoration-none"><h1 class="navbar-brand text-light">Mi app</h1></a>
+            <div class="ms-auto nav-item">
+                <a href="/publicaciones" class="milink me-2">Publicaciones</i></a>
+                <div class="btn-group">
+                    <a type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
+                        aria-expanded="false"><i class="bi bi-person-circle text-light icon-user"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item drop-hover miflex" href="#">Registrado como <b
+                                    class="nombre-usuario">{{name}}</b></a></li>
+                        <div class="border-bottom border-dark-subtle my-2"></div>
+                        <li><a class="dropdown-item drop-hover" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item drop-hover" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item drop-hover" href="#">Menu item</a></li>
+                        <li><a class="dropdown-item drop-hover" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+                {{else}}
+                <nav class="navbar bg-body-tertiary color-fondo">
+                <h1 class="navbar-brand text-light">Mi app</h1>
+                <div class="ms-auto nav-item">
+                    <a href="/login" class="text-decoration-none link-opacity-50-hover link-light miPadding">Login</a>
+                    <a href="/register" class="text-decoration-none link-opacity-50-hover link-light miPadding">Register</a>
+            </div>
+        </nav>
+        {{/if}}
+    </div>
+
+</header>
